@@ -18,3 +18,6 @@ include_once WP2023_PATH . 'includes/classes/Wp2023Oder.php';
 
 // sử dụng ajax trong php
 include_once WP2023_PATH . 'includes/admin_ajax.php';
+
+// tạo setting
+include_once WP2023_PATH . 'includes/admin_setting.php';
