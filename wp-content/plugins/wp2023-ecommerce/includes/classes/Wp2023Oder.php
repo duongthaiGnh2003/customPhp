@@ -87,11 +87,22 @@ class Wp2023Order
 
     public function update($id, $data)
     {
+
         global $wpdb;
-        $wpdb->update($this->_orders, $data, [
-            'id' => $id
-        ]);
-        return true;
+
+        // Lấy dữ liệu hiện tại
+        $sql = $wpdb->prepare("SELECT * FROM $this->_orders WHERE id = %d", $id);
+        $current = (array) $wpdb->get_row($sql);
+
+        if (!$current) {
+            return new WP_Error('not_found', 'Không tìm thấy đơn hàng.', ['status' => 404]);
+        }
+
+        $wpdb->update($this->_orders, $data, ['id' => $id]);
+
+        $current = (array) $wpdb->get_row($sql);
+
+        return $current;
     }
 
     public function destroy($id)
