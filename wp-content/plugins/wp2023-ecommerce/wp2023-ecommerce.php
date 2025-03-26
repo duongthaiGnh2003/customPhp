@@ -24,9 +24,15 @@ register_activation_hook(
     __FILE__,
     'wp2023_ecommerce_activation'
 );
-function wp2023_ecommerce_activation(){
-  // tạo csdl
+function wp2023_ecommerce_activation()
+{
+    // tạo csdl
+    include_once WP2023_PATH . 'includes/db/migration.php';
     // tạo dữ liệu mẫu
+    include_once WP2023_PATH . 'includes/db/seeder.php';
+
+    // option 
+    update_option("wp2023_settings_options", []);
 }
 
 // định nghĩa hành động khi plugin được tắt ik
@@ -34,9 +40,10 @@ register_deactivation_hook(
     __FILE__,
     'wp2023_ecommerce_deActivation'
 );
-function wp2023_ecommerce_deActivation(){
+function wp2023_ecommerce_deActivation()
+{
     // xóa csdl
-    // xóa dữ liệu mẫu
+
 }
 
-include_once WP2023_PATH.'includes/includes.php'; // có tác dụng nhúng những file này vào file includes.php
+include_once WP2023_PATH . 'includes/includes.php'; // có tác dụng nhúng những file này vào file includes.php
