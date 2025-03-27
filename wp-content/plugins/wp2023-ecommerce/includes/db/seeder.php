@@ -15,6 +15,7 @@ $orders = [
         'customer_name'   => 'NVA',
         'customer_phone'  => '0123456789',
         'customer_email'  => 'NVA@gmail.com',
+        'customer_address' => 'Tuyên quang',
         'note'            => 'Giao nhanh',
     ],
     [
@@ -25,6 +26,7 @@ $orders = [
         'customer_name'   => 'NVB',
         'customer_phone'  => '0123456789',
         'customer_email'  => 'NVA@gmail.com',
+        'customer_address' => 'Tuyên quang',
         'note'            => 'Giao nhanh',
     ],
     [
@@ -35,6 +37,7 @@ $orders = [
         'customer_name'   => 'NVC',
         'customer_phone'  => '0123456789',
         'customer_email'  => 'NVA@gmail.com',
+        'customer_address' => 'Tuyên quang',
         'note'            => 'Giao nhanh',
     ],
 ];

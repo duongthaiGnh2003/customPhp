@@ -9,11 +9,19 @@ function wp2023_order_change_status()
 {
     $order_id = $_REQUEST['order_id'];
     $status = $_REQUEST['status'];
-    $Wp2023OrderClass = new Wp2023Order();
-    $Wp2023OrderClass->change_status($order_id, $status);
-    $res = [
-        'success' => true
-    ];
+    $nonce = $_REQUEST['_wpnonce'];
+    if (wp_verify_nonce($nonce, 'wp2023_update_order_statusd')) { //dùng để kiểm tra và xác thực giá trị nonce
+        $Wp2023OrderClass = new Wp2023Order();
+        $Wp2023OrderClass->change_status($order_id, $status);
+        $res = [
+            'success' => true
+        ];
+    } else {
+        $res = [
+            'success' => false
+        ];
+    }
+
     echo json_encode($res);
     die();
 }

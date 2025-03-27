@@ -2,10 +2,12 @@
 class Wp2023Order
 { //Định nghĩa một lớp để thao tác với bảng orders trong csdl
     private $_orders = ''; //để lưu tên bảng trong CSDL.
+    private $_order_detail = '';
     public function __construct()
     {
         global $wpdb;
-        $this->_orders = $wpdb->prefix . 'orders'; // wp_orders
+        $this->_orders = $wpdb->prefix . 'wp2023_orders'; // wp_wp2023_orders
+        $this->_order_detail = $wpdb->prefix . 'wp2023_order_detail';
     }
 
     public function all()
@@ -142,5 +144,17 @@ class Wp2023Order
             ]
         );
         return true;
+    }
+
+    public function order_items($order_id)
+    {
+        global $wpdb;
+        $sql = "SELECT products.post_title as product_name,order_detail.* FROM {$this->_order_detail} AS order_detail
+            JOIN {$wpdb->posts} AS products ON products.ID = order_detail.product_id
+            WHERE order_detail.order_id = $order_id
+            ORDER BY order_detail.id DESC
+        ";
+        $items = $wpdb->get_results($sql);
+        return $items;
     }
 }
