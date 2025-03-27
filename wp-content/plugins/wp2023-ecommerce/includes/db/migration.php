@@ -16,6 +16,7 @@ $sql = "CREATE TABLE `$tbl_orders` (
   `customer_name` varchar(255) DEFAULT NULL,
   `customer_phone` varchar(255) DEFAULT NULL,
   `customer_email` varchar(25) DEFAULT NULL,
+  `customer_address` varchar(255) DEFAULT NULL,
   `note` text DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
