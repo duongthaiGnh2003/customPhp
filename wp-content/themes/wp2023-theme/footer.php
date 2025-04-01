@@ -53,3 +53,6 @@
     </div>
 </footer>
 <!-- Footer Section End -->
+<?php
+wp_footer()
+?>

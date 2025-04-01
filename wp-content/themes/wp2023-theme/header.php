@@ -23,7 +23,7 @@ global $theme_uri;
     <meta property="og:type" content="article">
 
     <!-- Css Styles -->
-    <?php wp_head() ?> <!-- để gọi đến các cái link đã nạp vào ở wp2023_theme_register_styles -->
+    <?php wp_head(); ?> <!-- để gọi đến các cái link đã nạp vào ở wp2023_theme_register_styles -->
 
 
     <!-- Google tag (gtag.js) -->

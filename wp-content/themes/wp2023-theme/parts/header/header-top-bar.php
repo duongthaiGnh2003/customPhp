@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-3">
         <div class="header__logo" style="display: flex; justify-content: space-around; ">
-            <a href="https://ogani.com.vn"><img src="https://ogani.com.vn/public/img/logo.png" style="width: 120px;" alt=""></a>
+            <a href="<?= home_url() ?>"><img src="https://ogani.com.vn/public/img/logo.png" style="width: 120px;" alt=""></a>
         </div>
     </div>
     <div class="col-lg-6">

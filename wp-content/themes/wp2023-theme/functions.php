@@ -8,10 +8,13 @@ $theme_dir = get_template_directory();
 $theme_version = '1.0';
 
 // Đăng ký các thành phần hỗ trợ cho theme
-include_once $theme_dir . '/inc/theme_suppor.php';
+include_once $theme_dir . '/inc/theme_support.php';
 
 // Đăng ký style , scripts cho theme
 include_once $theme_dir . '/inc/scripts.php';
 
 // Đăng ký sidebar, widget 
 include_once $theme_dir . '/inc/widget.php';
+
+// Đăng ký customizers cho theme 
+include_once $theme_dir . '/inc/customizers.php';
