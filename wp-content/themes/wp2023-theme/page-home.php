@@ -11,7 +11,9 @@ Template Name: Trang home
 <?php get_header(); ?>
 
 <?php while (have_posts()) : the_post(); ?>
-    <h2>code cua trang homee</h2>
+  <h2>code cua trang homee</h2>
+  <?= do_shortcode('[shortcode_header_cart show_wishlist=0]'); ?> <!-- nếu không muốn hiện thì set thuộc tính bằng 0 -->
+
 <?php endwhile; ?>
 
 <?php get_footer(); ?>

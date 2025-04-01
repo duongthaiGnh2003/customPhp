@@ -18,3 +18,6 @@ include_once $theme_dir . '/inc/widget.php';
 
 // Đăng ký customizers cho theme 
 include_once $theme_dir . '/inc/customizers.php';
+
+// Đăng ký shortcode cho theme 
+include_once $theme_dir . '/inc/shortcode.php';
